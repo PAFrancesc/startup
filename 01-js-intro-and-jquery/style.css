@@ -1,0 +1,13 @@
+* {
+  text-align: center;
+}
+
+#seccion {
+  width: 20%;
+  height: 20%;
+  display: none;
+}
+
+.alias {
+  display: none;
+}
