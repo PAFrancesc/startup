@@ -1,0 +1,92 @@
+html{
+  font-size: 14px;
+  font-family: calibri;
+  height: 1200px;
+  width: 1200px;
+}
+
+*[class*=a]-[class$=r] {
+  background: blue;
+}
+
+
+*[class$=r] {
+  background: magenta;
+}
+
+
+.mainheader {
+  background: red;
+  text-align: center;
+  font-size: 46px;
+  height: 130px;
+  border-radius: 1em 1em;
+}
+
+p{
+	margin: 0;
+}
+
+.content {
+  width: 60%;
+  height: 600px;
+  float: left;
+  background: grey;
+  font-size: 14px; 
+  border-radius: 1em 1em;
+  box-sizing: border-box; /*border, content, padding*/ 
+}
+
+
+.sidebar {
+  float: left;
+  width: 20%;
+  height: 600px;
+  font-size: 10px;
+  border-radius: 1em 1em;
+  box-sizing: boder-box; /*border, content, padding*/ 
+}
+
+.navigation {
+  background:  black; 	
+  float: left;
+  width: 20%;
+  height: 600px;
+  font-size: 10px;
+  border-radius: 1em 1em;
+  box-sizing: content-box; /*border, content, padding*/ 
+}
+
+.article{
+  width: 100%;
+  height: 65%;
+  float: left;
+  background: yellow !important;
+  border-radius: 1em 1em;
+}
+
+.sectionheader {
+  border-radius: 1em 1em;
+  width: 100%;
+  height: 20%;
+}
+
+
+.footersection {
+  background: blue;
+  float: left;
+  border-radius: 1em 1em;
+  height: 15%;
+  width: 100%;
+
+}
+
+.footer {
+  border-radius: 1em 1em;
+  float: left;
+  background: grey;
+  height: 90px; 
+  width: 100%;
+  text-align: center;
+  font-size: 10px; 
+}
