@@ -30,6 +30,7 @@ img {
   display: block;
 }
 
+
 #arrow{
   position: fixed;
   right: 0;
@@ -70,17 +71,17 @@ h3{
   left: 20%;
 }
 
-@media (min-width: 40rem) {
-  .column {
-    float: left;
-    padding: 10px;
-    padding: 10px;
-  }
-  .column.half { margin-top: 0px; width: 65%; }
+
+.column {
+  float: left;
+  padding: 10px;
+  padding: 10px;
 }
 
+.column.half { margin-top: 0px; width: 65%; }
+
 .first {
- height: 250px;
+  height: 250px;
 }
 
 .line {
@@ -116,20 +117,32 @@ h3{
     width: 336px;
     height: 200px;
   }
-  nav {
-    float: left;
-  }
+  .column.half { margin-top: 0px; width: 100%; }
 }
-@media all and (max-width:725px) and (min-width:500px) {
+
+@media all and (max-width:725px) and (min-width:650px) {
   img {
     width: 300px;
     height: 180px;
   }
+  .column.half { margin-top: 0px; width: 100%; }
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width:650px) and (min-width:510px) {
+  img {
+    width: 230px;
+    height: 130px;
+  }
+  .column.half { margin-top: 0px; width: 100%; }
+}
+
+@media all and (max-width: 510px) {
   img {
     width: 168px;
     height: 100px;
   }
+  body {
+    width: 490px;
+  }
+  .column.half { margin-top: 0px; width: 100%; }
 }
