@@ -1,18 +1,24 @@
 
 $( document ).ready(function() {
-  console.log( 'ready!' );
+  $( "#seccion" ).css({
+    background: 'grey',
+    width: '200px',
+    height: '200px'
+  });
+
+  $("#seccion").fadeIn(1000,function(){
+    $("#seccion").append('<input type="text" id="field"/>').addClass("alias");
+    $("#field").focus();
+  });
+
+  $("#bot1").click(function(){
+  $.get("http://bootcamp.aws.af.cm/welcome/tunombre",function(response){
+    $("#bottext").text(response.response);
+  });
+});
 });
 
 
 
-if ( $( 'input' ).length > 0 ) {
-  $( '#seccion' ).css({
-    background: 'black',
-    color: 'white',
-  });
-
-  $( '#seccion' ).fadeIn(1000);
-}
 
 
-$ ( '#seccion' ).append( '<input type="text" class="alias"/>' );
