@@ -1,20 +1,22 @@
-var Movie = function(title, year, length) {
+var Movie = function(title, year, length, obj) {
   this.fields= {
     'title': title,
     'year': year,
     'length': length,
   };
-  console.log("Movie Created: " + this.fields.title);
 
+  this.observers = obj;
+
+  console.log("Movie Created: " + this.fields.title);
 }
 
 Movie.prototype = {
   constructor: Movie,
   play:function ()  {
-    console.log ("Start playing: "+this.get('title')+', '+this.get('year')+', '+this.get('length'));  
+    this.notify("playing",this.get('title'));
   },
   stop:function ()  {
-    console.log(this.get('title')+" was stopped.");
+    this.notify("stopped",this.get('title'));
   },
   set:function (attr, value)  {
     this.fields[attr] = value;
@@ -22,18 +24,22 @@ Movie.prototype = {
   },
   get:function (attr) {
     return this.fields[attr];
+  },
+  addObserver:function(obj){
+    this.observers.push(obj);
+  },
+  notify:function( observer, movie ){
+    this.observers[observer](movie);
   }
 }
 
 var Social = function() {}
-
 Social.prototype = {
   share:function (friendName)  {
     console.log ("Sharing "+ this.fields.title +" with "+friendName);  
   }
 }
 Social.prototype.like = function () {}
-
 _.extend( Movie.prototype, Social.prototype );
 
 var myMovie = (function() {
@@ -58,14 +64,12 @@ var myMovie = (function() {
   };
 })();
 
-
-
 function Actor (names, ages, nacionalitys) {
   this.fields= {
     'name' : names,
-   'age' : ages,
-   'nacionality' : nacionalitys,
- }
+    'age' : ages,
+    'nacionality' : nacionalitys,
+  }
   console.log("Actor Created: " + this.fields.name)
 }
 Actor.prototype = {
@@ -75,11 +79,14 @@ Actor.prototype = {
   }
 }
 
-
-
-function MovieObserver () {}
-
-
+var movieObserver = {
+  playing : function(title) {
+    console.log( 'Playing: ', title );
+  },
+  stopped : function(title) {
+    console.log( 'Stopped: ', title );
+  }
+}
 
 function DownloadableMovie () {}
 DownloadableMovie.prototype = new Movie;
@@ -89,30 +96,23 @@ DownloadableMovie.prototype.download = function () {
 }
 
 
-var terminator = new Movie ("Terminator", 1987, 1209);
-var alien = new Movie ("Alien", 1986, 1402);
-var advg = new Movie ("Advengers", 2013, 1309);
-var inception = new Movie ("Inception", 2010, 2209);
+var terminator = new Movie ("Terminator", 1987, 1209, movieObserver);
+var alien = new Movie ("Alien", 1986, 1402, movieObserver);
+var advg = new Movie ("Advengers", 2013, 1309, movieObserver);
+var inception = new Movie ("Inception", 2010, 2209, movieObserver);
 var down = new DownloadableMovie ();
 var bruce = new Actor("Bruce Willis", 60, "USA");
 var rider = new Actor("Winona Rider", 39, "USA");
 var actors = [];
-
-
-
 terminator.play();   
 inception.play()
 alien.stop();
 advg.set('year', 1999);
-
 alien.share("miAmigo");
-
 down.set('title', "test");
 down.download();
-
 myMovie.set('title', "myMovie");
 myMovie.play();
-
 actors.push(bruce);
 actors.push(rider);
 inception.actors = actors;
