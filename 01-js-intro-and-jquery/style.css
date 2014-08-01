@@ -1,13 +1,36 @@
 * {
   text-align: center;
+  font-family: Arial;
 }
 
 #seccion {
   width: 20%;
   height: 20%;
   display: none;
+  float: left;
 }
 
 .alias {
   display: none;
+}
+
+#twitter {
+  width:500px;
+  float: right;
+}
+
+p{
+  float: left;
+  margin-right: 20px;
+  margin-top: 10px;
+}
+
+article {
+  border-bottom: 25px; 
+}
+
+img{
+  display: inline-block;
+  clear: left;
+  float: left;
 }
