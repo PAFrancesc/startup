@@ -24,16 +24,26 @@ $( document ).ready(function() {
                       value: 'CALL'
                       });
   $("#seccion").append(bot1); 
+  
 
-
+  
   $("#bot1").click(function(){
-  $.get("http://bootcamp.aws.af.cm/welcome/" + $('#field').val() ,
-
-  function(response){
-  $("#seccion").append('<h2>'+response.response+'</h2>'); 
-
+    var val = $('#field').val();
+    if(!val)val = 'tuNombre';
+    
+    $.ajax({
+      type:'get',
+      url: "http://bootcamp.aws.af.cm/welcome/"+val,
+      complete: function(resp) {
+        console.log(resp);
+        $("#seccion").append('<h2>'+resp.responseJSON.response+'</h2>'); 
+      },
+      error: function () {
+        $('#html').css('color','red');
+      }
     });
   });
+
   $.ajax({
       url: 'http://tweetproxy.ap01.aws.af.cm/search?q=html5',
       dataType: 'jsonp',
@@ -43,7 +53,8 @@ $( document ).ready(function() {
         for(var i=0;i<len;i++){
           twitterEntry = data.statuses[i];
           console.log(twitterEntry);
-          $("#twitter").append('<article id="twit"><img src="'+ twitterEntry.user.profile_image_url +'" /><p><strong>' + twitterEntry.user.name + '</strong><p/><p>'+ twitterEntry.text +' <p/><article/>');
+          $("#twitter").append('<article id="twit'+i+'">');
+          $("#twit"+i).append('<img src="'+ twitterEntry.user.profile_image_url +'" /><p><strong>' + twitterEntry.user.name + '</strong><p/><p>'+ twitterEntry.text +'<p/>');
       }}
   });    
 });
