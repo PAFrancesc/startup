@@ -64,11 +64,11 @@ var myMovie = (function() {
   };
 })();
 
-function Actor (names, ages, nacionalitys) {
+function Actor (names, ages, nationality) {
   this.fields= {
     'name' : names,
     'age' : ages,
-    'nacionality' : nacionalitys,
+    'nacionality' : nationality,
   }
   console.log("Actor Created: " + this.fields.name)
 }
