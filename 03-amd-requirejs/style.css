@@ -1,0 +1,10 @@
+#content {
+  width: 100%;
+  text-align: center;
+}
+
+#quote {
+  font-family: 'Calibri';
+  font-size: 25px;
+  margin: 3px;
+}
