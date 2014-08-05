@@ -1,3 +1,124 @@
-<script id="entry-template" type="text/x-handlebars-template">
-  template content
-</script>
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>4° Templates Engines</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="lib/jquery.js" ></script>
+	<script type="text/javascript" src="lib/handlebars-v1.3.0.js" ></script>
+    <script src="scripts/profile.json"></script>
+  </head>
+  <body>
+    <script id="entry-template" type="text/x-handlebars-template">
+
+      <div id="main">
+        <img class="bigimg" src="{{profileimg}}">
+        <h1 class="title">{{name}} {{lastName}}</h1>
+        <h4 class="subtitle2">{{actualPosition positions}}</h4>
+        <table>
+        <tr>
+        <td colspan="2">
+        <span class="normal">{{location.name}}, {{location.country}}</span>
+        </td>
+        </tr>
+          <tr>
+            <td>
+              <h5 class="normalgrey">Actual  </h5>
+            </td>
+            <td>
+              <span class="normal">{{actualCompany positions}}</span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5 class="normalgrey">Anterior  </h5>
+            </td>
+            <td>
+              <span class="normal">{{lastCompany positions}}</span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id= "studies">
+        <table id="tableStudies">
+          <tr>
+            <td><img class="minimage" src="diplom.png"><h3 class="subtitle3">Estudios</h3>  </td>
+            <td></td>
+          </tr> 
+          {{#each educations}}
+          <tr>
+            <td> <h4 class="subtitle2">{{degree}}</h4> </td>
+            <td rowspan="4"> <img class="minimage" src="{{imgurl}}"></td>
+          </tr>
+          <tr>
+            <td> <h5 class="normal">{{schoolName}}</h5> </td>
+            <td></td>
+          <tr>
+          </tr>
+          <tr>
+            <td><h5 class="normalgrey">{{startDate.year}} - {{endDate.year}}  </h5></td>
+            <td></td>
+          </tr>
+          {{/each}}
+          <tr>
+          <td colspan="2"> <hr></td>
+          <tr>
+          <tr>
+            <td><img class="minimage" src="book.png"><h3 class="subtitle3">Idiomas</h3>  </td>
+            <td></td>
+          </tr>
+           {{#each languages}}
+          
+          <tr>
+            <td> <h4 class="subtitle2">{{name}}</h4> </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td> <h4 class="normal">{{level}}</h4> </td>
+            <td></td>
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+
+      <div id="studies">
+      	<table id="tableStudies">
+          <tr>
+            <td><img class="minimage" src="diplom.png"><h3 class="subtitle3">Experiencia</h3>  </td>
+            <td></td>
+          </tr> 
+          {{#each positions}}
+          <tr>
+            <td> <h4 class="subtitle2">{{title}}</h4> </td>
+            <td rowspan="5"> <img class="minimage" src="{{imgurl}}"></td>
+          </tr>
+          <tr>
+            <td> <h5 class="normal">{{company.name}}</h5> </td>
+            <td></td>
+          <tr>
+          </tr>
+          <tr>
+            <td><h5 class="normalgrey">{{startDate}} - {{endDate}}  </h5></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><span class="normal">{{summary}}  </span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr></td>
+            <td></td>
+          </tr>
+           {{/each}}
+      </div>
+
+ </script>
+   
+    <script type="text/javascript" src="scripts/javascript.js" ></script>
+  </body>
+</html>
