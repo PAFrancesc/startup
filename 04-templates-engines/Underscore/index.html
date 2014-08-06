@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>4° Templates Engines</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" media="all">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all">
+    <script type="text/javascript" src="lib/jquery.js" ></script>
+	  <script type="text/javascript" src="lib/underscore.js" ></script>
+    <script src="scripts/profile.json"></script>
+  </head>
+  <body>
+    <script type="foo/bar" id='information'>
+
+      <div id="main">
+        <img class="bigimg" src="<%= profileimg %>">
+        <h1 class="title"> <%= name %> <%= lastName %></h1>
+        <h4 class="subtitle2"><% var x = _.findWhere(positions, {endDate: "today"});%> <%= x.title %></h4>
+        <table>
+        <tr>
+        <td colspan="2">
+        <span class="normal"> <%= location.name %>, <%= location.country %></span>
+        </td>
+        </tr>
+          <tr>
+            <td>
+              <h5 class="normalgrey">Actual  </h5>
+            </td>
+            <td>
+              <span class="normal"><% var x = _.findWhere(positions, {endDate: "today"});%> <%= x.company.name %></span>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <h5 class="normalgrey">Anterior  </h5>
+            </td>
+            <td>
+              <span class="normal"><% var x = _.findWhere(positions, {lastJob:true});%> <%= x.title %></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id= "studies">
+        <table id="tableStudies">
+          <tr>
+            <td><img class="minimage" src="img/diplom.png"><h3 class="subtitle3">Estudios</h3>  </td>
+            <td></td>
+          </tr> 
+            <% _.each(educations,function(item,key,list){ %>
+              <tr>
+                <td> <h4 class="subtitle2"><%= item.degree %></h4> </td>
+                <td rowspan="4"> <img class="minimage" src=<%= item.imgurl %>></td>
+              </tr>
+              <tr>
+                <td> <h5 class="normal"><%= item.schoolName %></h5> </td>
+                <td></td>
+              <tr>
+              </tr>
+              <tr>
+                <td><h5 class="normalgrey"><%= item.startDate.year %> - <%= item.endDate.year %>   </h5></td>
+                <td></td>
+              </tr>
+            <%  });  %>
+          <tr>
+          <td colspan="2"> <hr></td>
+          <tr>
+          <tr>
+            <td><img class="minimage" src="img/book.png"><h3 class="subtitle3">Idiomas</h3>  </td>
+            <td></td>
+          </tr>
+           <% _.each(languages,function(item,key,list){ %>
+          
+          <tr>
+            <td> <h4 class="subtitle2"><%= item.name %></h4> </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td> <h4 class="normal"><%= item.level %></h4> </td>
+            <td></td>
+          </tr>
+          <%  });  %>
+        </table>
+      </div>
+
+      <div id="studies">
+      	<table id="tableStudies">
+          <tr>
+            <td><img class="minimage" src="img/diplom.png"><h3 class="subtitle3">Experiencia</h3>  </td>
+            <td></td>
+          </tr> 
+           <% _.each(positions,function(item,key,list){ %>
+          <tr>
+            <td> <h4 class="subtitle2"><%= item.title %></h4> </td>
+            <td rowspan="5"> <img class="minimage" src=<%= item.imgurl %>></td>
+          </tr>
+          <tr>
+            <td> <h5 class="normal"><%= item.company.name %></h5> </td>
+            <td></td>
+          <tr>
+          </tr>
+          <tr>
+            <td><h5 class="normalgrey"><%= item.startDate %> - <%= item.endDate %>  </h5></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><span class="normal"><%= item.summary %>  </span></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td colspan="2"><hr></td>
+            <td></td>
+          </tr>
+            <%  });  %>
+      </div>
+
+ </script>
+   
+    <script type="text/javascript" src="scripts/javascript.js" ></script>
+  </body>
+</html>

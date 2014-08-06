@@ -12,8 +12,14 @@ body {
   text-align:center;
 }
 
+div {
+  position:relative;       
+  -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
 
-img{
+.bigimg{
   display: inline-block;
   float: left;
   margin-top: 15px;
@@ -44,12 +50,11 @@ img{
 .subtitle2 {
   font-size: 20px;
   font-weight: normal;
-  margin: 2px;
 }
 .subtitle3 {
   font-size: 25px;
   font-weight: normal;
-  margin: 2px;
+  margin-top: 15px;
 
 }
 
@@ -71,7 +76,7 @@ img{
 
 #studies{
   width: 55%;
-  height: 230px;
+
   margin:0 auto;
   margin-top: 15px;
   background: white;
@@ -80,5 +85,15 @@ img{
 
 #tableStudies{
   margin-left: 20px;
-   width: 100%;
+  width: 90%;
+  background: white;
+}
+
+hr {
+  margin-top: 10px;
+}
+.minimage{
+  display: inline-block;
+  float: left;
+  margin: 5px;
 }

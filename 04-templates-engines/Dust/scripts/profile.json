@@ -39,7 +39,7 @@ var profile = {
   ],
   "positions": [
     {
-      "summary": "asdfffffffffffa asd fasdasd a fasdf asd asd ads fa sdf asdf a",
+      "summary": "Desarrollo de aplicaciones E-Commerce para los portales Movistar de toda Sudamerica",
       "startDate": "9/20011",
       "title": "PHP Developer",
       "imgurl": "https://media.licdn.com/media/p/3/000/0ae/02f/264841c.png",
@@ -50,7 +50,7 @@ var profile = {
       "endDate": "12/2012",
     },
     {
-      "summary": "asdfffffffffffa asd fasdasd a fasdf asd asd ads fa sdf asdf a",
+      "summary": "Referente técnico PHP dentro del equipo MDH para el cliente Cencosud.",
       "startDate": "12/2012",
       "title": "Tech Leader PHP",
       "company": {

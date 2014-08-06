@@ -1,0 +1,75 @@
+var profile = {
+  "lastName": "Francesconi",
+  "name": "Pablo Agustín",
+  "profileimg": "https://media.licdn.com/mpr/mpr/shrink_200_200/p/8/005/04d/1e2/115946f.jpg",
+  "location": {
+    "phone": "123123123",
+    "name": "Capital Federal",
+    "country": "Argentina"
+  }, 
+  "languages": [
+    {
+      "name":  "English",
+      "level": "Intermediate",
+    },
+    {
+      "name":  "Spanish",
+      "level": "Nativo",
+    },
+     {
+      "name":  "Portuguese",
+      "level": "Básico",
+    },
+  ],
+  "educations": [
+    {
+      "startDate": {"year": 2009},
+      "degree": "Técnico Superior en Programación",
+      "schoolName": "Universidad Tecnologica Nacional",
+      "endDate": {"year": 2011},
+      "imgurl" : "https://media.licdn.com/mpr/mpr/shrink_60_60/p/2/005/055/042/36c01b2.png",
+    },
+    {
+      "startDate": {"year": 2012},
+      "degree": "Técnico Superior en Sistemas Informaticos",
+      "schoolName": "Universidad Tecnologica Nacional",
+      "endDate": {"year": 2014},
+      "imgurl" : "https://media.licdn.com/mpr/mpr/shrink_60_60/p/2/005/055/042/36c01b2.png",
+    },
+  ],
+  "positions": [
+    {
+      "summary": "Desarrollo de aplicaciones E-Commerce para los portales Movistar de toda Sudamerica",
+      "startDate": "9/20011",
+      "title": "PHP Developer",
+      "imgurl": "https://media.licdn.com/media/p/3/000/0ae/02f/264841c.png",
+      "company": {
+        "name": "Gameloft",
+        "industry": "Internet",
+      },
+      "endDate": "12/2012",
+    },
+    {
+      "summary": "Referente técnico PHP dentro del equipo MDH para el cliente Cencosud.",
+      "startDate": "12/2012",
+      "title": "Tech Leader PHP",
+      "company": {
+          "name": "Baufest",
+          "industry": "Internet",
+        },
+        "imgurl":"https://media.licdn.com/media/p/2/000/059/2e7/0415071.png",
+      "endDate" : "6/2014",
+       "lastJob" : true,
+    },
+    {
+      "summary": "Designed and developed features ",
+      "startDate": "9/2009",
+      "title": "PHP Developer",
+      "company": {
+          "name": "Globant",
+          "industry": "Internet",
+        },
+         "imgurl":"https://media.licdn.com/media/p/3/000/01b/2a5/130c38a.png",
+        "endDate": "today",
+    }],
+};
